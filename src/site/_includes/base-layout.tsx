@@ -1,6 +1,6 @@
 import React from "react";
-import { EleventyFilters } from "../_includes/eleventy-filters";
 import { PageHead } from "../../components/page-head/page-head";
+import { EleventyFilters } from "../_includes/eleventy-filters";
 
 export interface BaseLayoutProps {
 	eleventyData: any;
