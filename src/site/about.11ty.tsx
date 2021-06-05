@@ -11,9 +11,9 @@ export const data = {
 	description: "Todo: About page description...",
 };
 
-export function render(data: any) {
+export function render(eleventyData: any) {
 	return (
-		<BaseLayout eleventyData={data}>
+		<BaseLayout eleventyData={eleventyData}>
 			<div className="wrapper">
 				<h1>About</h1>
 				<p>

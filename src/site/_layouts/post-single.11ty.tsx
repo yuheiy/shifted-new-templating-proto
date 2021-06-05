@@ -5,12 +5,12 @@ export const data = {
 	layout: "react",
 };
 
-export function render(data: any) {
+export function render(eleventyData: any) {
 	return (
-		<BaseLayout eleventyData={data}>
+		<BaseLayout eleventyData={eleventyData}>
 			<div
 				className="wrapper"
-				dangerouslySetInnerHTML={{ __html: data.content }}
+				dangerouslySetInnerHTML={{ __html: eleventyData.content }}
 			/>
 		</BaseLayout>
 	);

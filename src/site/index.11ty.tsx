@@ -12,18 +12,18 @@ export const data = {
 	description: "Todo: Home page description...",
 };
 
-export function render(data: any) {
-	// console.log(data);
+export function render(eleventyData: any) {
+	// console.log(eleventyData);
 
 	return (
-		<BaseLayout eleventyData={data}>
+		<BaseLayout eleventyData={eleventyData}>
 			<div className="wrapper">
 				<p>
 					<Button>hi</Button>
 				</p>
 				<p>Posts:</p>
 				<ol>
-					{data.collections.posts.map((post) => {
+					{eleventyData.collections.posts.map((post) => {
 						return (
 							<li key="_">
 								<a href={EleventyFilters.url(post.url)}>{post.data.title}</a>
