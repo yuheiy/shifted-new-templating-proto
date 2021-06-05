@@ -6,7 +6,6 @@ import { EleventyFilters } from "./_includes/eleventy-filters";
 
 export const { data, render } = defineEleventyPage(
 	{
-		layout: "react",
 		eleventyNavigation: {
 			key: "Home",
 		},

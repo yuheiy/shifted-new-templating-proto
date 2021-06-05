@@ -4,7 +4,6 @@ import { defineEleventyPage } from "./_includes/define-eleventy-page";
 
 export const { data, render } = defineEleventyPage(
 	{
-		layout: "react",
 		eleventyNavigation: {
 			key: "About",
 			parent: "Home",
