@@ -1,0 +1,31 @@
+{
+	"name": "shifted-templating",
+	"scripts": {
+		"start": "tsc && npm-run-all -p start:*",
+		"start:eleventy": "rm -rf dist/ && eleventy --serve",
+		"start:vite": "vite",
+		"start:ts": "tsc --watch",
+		"build": "tsc && vite build && ELEVENTY_ENV=production eleventy",
+		"serve": "vite preview"
+	},
+	"dependencies": {
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "^0.12.1",
+		"@11ty/eleventy-navigation": "^0.2.0",
+		"@types/node": "^15.12.1",
+		"@types/react": "^17.0.9",
+		"@types/react-dom": "^17.0.6",
+		"npm-run-all": "^4.1.5",
+		"prettier": "^2.3.0",
+		"sass": "^1.34.1",
+		"typescript": "^4.2.3",
+		"vite": "^2.3.5"
+	},
+	"engines": {
+		"node": ">=16"
+	},
+	"private": true
+}

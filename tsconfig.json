@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "CommonJS",
+		"lib": ["ESNext", "DOM"],
+		"moduleResolution": "Node",
+		"sourceMap": true,
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"noEmit": false,
+		"jsx": "react"
+	},
+	"include": ["./config.ts", "./src"]
+}
