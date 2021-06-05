@@ -1,13 +1,18 @@
 {
 	"compilerOptions": {
+		/* Basic Options */
+		"incremental": true,
 		"target": "ESNext",
 		"module": "CommonJS",
 		"lib": ["ESNext", "DOM"],
-		"moduleResolution": "Node",
+		"jsx": "react",
 		"sourceMap": true,
-		"resolveJsonModule": true,
+		/* Module Resolution Options */
 		"esModuleInterop": true,
-		"jsx": "react"
+		/* Advanced Options */
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true
 	},
 	"include": ["config.ts", "src/**/*"]
 }
