@@ -62,7 +62,7 @@ export function render(data: any) {
 			<body>
 				<PageHead
 					pages={this.eleventyNavigation(data.collections.all)}
-					pageUrl={data.page.url}
+					eleventyNavigation={data.eleventyNavigation}
 				/>
 
 				{typeof data.content === "object" && <div>{data.content}</div>}

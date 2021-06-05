@@ -2,17 +2,23 @@ import React from "react";
 
 export interface PageHeadProps {
 	pages: any;
-	pageUrl: string;
+	eleventyNavigation?: {
+		key: string;
+	};
 }
 
-export function PageHead({ pages, pageUrl }: PageHeadProps) {
+export function PageHead({ pages, eleventyNavigation }: PageHeadProps) {
 	return (
 		<header>
 			{pages.map((page) => {
 				return (
 					<React.Fragment key="_">
 						<p>
-							<a href={page.url !== pageUrl ? page.url : undefined}>
+							<a
+								href={
+									page.key !== eleventyNavigation?.key ? page.url : undefined
+								}
+							>
 								{page.title}
 							</a>
 						</p>
@@ -20,7 +26,13 @@ export function PageHead({ pages, pageUrl }: PageHeadProps) {
 							{page.children.map((page) => {
 								return (
 									<li key="_">
-										<a href={page.url !== pageUrl ? page.url : undefined}>
+										<a
+											href={
+												page.key !== eleventyNavigation?.key
+													? page.url
+													: undefined
+											}
+										>
 											{page.title}
 										</a>
 									</li>
