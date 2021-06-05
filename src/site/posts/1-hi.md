@@ -1,5 +1,5 @@
 ---
-layout: base.11ty.js
+layout: post-single
 title: Hi
 ---
 
