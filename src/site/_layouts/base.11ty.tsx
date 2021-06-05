@@ -28,12 +28,14 @@ export function render(data: any) {
 				<meta property="og:type" content="website" />
 				<meta
 					property="og:image"
-					content={`${data.metadata.scheme}://${data.metadata.domain}/ogp.png`}
+					content={`${data.metadata.scheme}://${data.metadata.domain}${this.url(
+						"/ogp.png"
+					)}`}
 				/>
 				<meta
 					property="og:url"
 					content={`${data.metadata.scheme}://${data.metadata.domain}${this.url(
-						this.page.url
+						data.page.url
 					)}`}
 				/>
 				<meta property="og:description" content={data.description} />
@@ -45,7 +47,7 @@ export function render(data: any) {
 
 				<meta name="twitter:card" content="summary_large_image" />
 
-				<link rel="cannonical" href={this.url(this.page.url)} />
+				<link rel="cannonical" href={this.url(data.page.url)} />
 				<link rel="icon" href={this.url("/favicon.ico")} />
 				<link rel="apple-touch-icon" href={this.url("/apple-touch-icon.png")} />
 
@@ -60,7 +62,7 @@ export function render(data: any) {
 			<body>
 				<PageHead
 					pages={this.eleventyNavigation(data.collections.all)}
-					pageUrl={this.page.url}
+					pageUrl={data.page.url}
 				/>
 
 				{typeof data.content === "object" && <div>{data.content}</div>}
