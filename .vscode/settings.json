@@ -2,7 +2,9 @@
 	"files.exclude": {
 		"config.js": true,
 		"config.js.map": true,
-		"src/**/*.js": true,
-		"src/**/*.js.map": true
+		"src/components/**/*.js": true,
+		"src/components/**/*.js.map": true,
+		"src/site/**/*.js": true,
+		"src/site/**/*.js.map": true
 	}
 }

@@ -1,14 +1,4 @@
 {
-	"compilerOptions": {
-		"target": "ESNext",
-		"module": "CommonJS",
-		"lib": ["ESNext", "DOM"],
-		"moduleResolution": "Node",
-		"sourceMap": true,
-		"resolveJsonModule": true,
-		"esModuleInterop": true,
-		"noEmit": false,
-		"jsx": "react"
-	},
-	"include": ["./config.ts", "./src"]
+	"extends": "./tsconfig.base.json",
+	"include": ["config.ts", "src/components/**/*", "src/site/**/*"]
 }

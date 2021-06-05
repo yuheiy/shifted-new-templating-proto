@@ -4,7 +4,9 @@ dist
 dist-ssr
 *.local
 
-/src/**/*.js
-/src/**/*.js.map
 /config.js
 /config.js.map
+/src/components/**/*.js
+/src/components/**/*.js.map
+/src/site/**/*.js
+/src/site/**/*.js.map
