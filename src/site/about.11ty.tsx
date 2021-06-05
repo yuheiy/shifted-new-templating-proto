@@ -11,9 +11,6 @@ export const data = {
 };
 
 export function render(data: any) {
-	// console.log(this);
-	// console.log(data);
-
 	return (
 		<div className="wrapper">
 			<h1>About</h1>

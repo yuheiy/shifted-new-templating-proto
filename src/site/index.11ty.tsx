@@ -1,4 +1,5 @@
 import React from "react";
+import { EleventyFilters } from "./_includes/eleventy-filters";
 import { Button } from "../components/button/button";
 
 export const data = {
@@ -11,7 +12,6 @@ export const data = {
 };
 
 export function render(data: any) {
-	// console.log(this);
 	// console.log(data);
 
 	return (
@@ -24,7 +24,7 @@ export function render(data: any) {
 				{data.collections.posts.map((post) => {
 					return (
 						<li key="_">
-							<a href={this.url(post.url)}>{post.data.title}</a>
+							<a href={EleventyFilters.url(post.url)}>{post.data.title}</a>
 						</li>
 					);
 				})}

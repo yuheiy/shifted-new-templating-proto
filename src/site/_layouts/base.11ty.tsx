@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOMServer from "react-dom/server";
+import { EleventyFilters } from "../_includes/eleventy-filters";
 import { PageHead } from "../../components/page-head/page-head";
 
 export const data = {};
 
 export function render(data: any) {
-	// console.log(this);
 	// console.log(data);
 
 	return renderReact(
@@ -28,15 +28,15 @@ export function render(data: any) {
 				<meta property="og:type" content="website" />
 				<meta
 					property="og:image"
-					content={`${data.metadata.scheme}://${data.metadata.domain}${this.url(
-						"/ogp.png"
-					)}`}
+					content={`${data.metadata.scheme}://${
+						data.metadata.domain
+					}${EleventyFilters.url("/ogp.png")}`}
 				/>
 				<meta
 					property="og:url"
-					content={`${data.metadata.scheme}://${data.metadata.domain}${this.url(
-						data.page.url
-					)}`}
+					content={`${data.metadata.scheme}://${
+						data.metadata.domain
+					}${EleventyFilters.url(data.page.url)}`}
 				/>
 				<meta property="og:description" content={data.description} />
 				<meta property="og:site_name" content={data.metadata.siteTitle} />
@@ -47,21 +47,30 @@ export function render(data: any) {
 
 				<meta name="twitter:card" content="summary_large_image" />
 
-				<link rel="cannonical" href={this.url(data.page.url)} />
-				<link rel="icon" href={this.url("/favicon.ico")} />
-				<link rel="apple-touch-icon" href={this.url("/apple-touch-icon.png")} />
+				<link rel="cannonical" href={EleventyFilters.url(data.page.url)} />
+				<link rel="icon" href={EleventyFilters.url("/favicon.ico")} />
+				<link
+					rel="apple-touch-icon"
+					href={EleventyFilters.url("/apple-touch-icon.png")}
+				/>
 
 				{data.env.isDev && (
 					<>
-						<script type="module" src={this.url("/@vite/client")}></script>
-						<script type="module" src={this.url("/src/main.ts")}></script>
+						<script
+							type="module"
+							src={EleventyFilters.url("/@vite/client")}
+						></script>
+						<script
+							type="module"
+							src={EleventyFilters.url("/src/main.ts")}
+						></script>
 					</>
 				)}
 			</head>
 
 			<body>
 				<PageHead
-					pages={this.eleventyNavigation(data.collections.all)}
+					pages={EleventyFilters.eleventyNavigation(data.collections.all)}
 					eleventyNavigation={data.eleventyNavigation}
 				/>
 
