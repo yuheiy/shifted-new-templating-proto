@@ -1,9 +1,12 @@
 import React from "react";
 import { PageHead } from "../../components/page-head/page-head";
 import { EleventyFilters } from "../_includes/eleventy-filters";
+import { EleventyCommonData } from "./eleventy-types";
 
 export interface BaseLayoutProps {
-	eleventyData: any;
+	eleventyData: Partial<EleventyCommonData> & {
+		[key: string]: any;
+	};
 	children: React.ReactNode;
 }
 
