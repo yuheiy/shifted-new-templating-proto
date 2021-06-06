@@ -1,6 +1,6 @@
 import React from "react";
-import { BaseLayout } from "./_includes/base-layout";
-import { defineEleventyTemplate } from "./_includes/define-eleventy-template";
+import { BaseLayout } from "../_includes/base-layout";
+import { defineEleventyTemplate } from "../_includes/define-eleventy-template";
 
 export const { data, render } = defineEleventyTemplate(
 	{

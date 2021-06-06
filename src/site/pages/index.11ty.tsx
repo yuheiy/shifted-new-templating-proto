@@ -1,8 +1,8 @@
 import React from "react";
-import { Button } from "../components/button/button";
-import { BaseLayout } from "./_includes/base-layout";
-import { defineEleventyTemplate } from "./_includes/define-eleventy-template";
-import { EleventyFilters } from "./_includes/eleventy-filters";
+import { Button } from "../../components/button/button";
+import { BaseLayout } from "../_includes/base-layout";
+import { defineEleventyTemplate } from "../_includes/define-eleventy-template";
+import { EleventyFilters } from "../_includes/eleventy-filters";
 
 export const { data, render } = defineEleventyTemplate(
 	{

@@ -1,31 +1,16 @@
-const prettier = require("prettier");
+const { formatHtml } = require("./src/site/_transforms/format-html");
 const config = require("./config").default;
-
-let prettierOptions;
 
 module.exports = (eleventyConfig) => {
 	eleventyConfig.addCollection("posts", (collection) => {
-		return collection.getFilteredByGlob("src/site/posts/*.md").sort((a, b) => {
-			return a.inputPath.localeCompare(b.inputPath);
-		});
+		return collection
+			.getFilteredByGlob("src/site/pages/posts/*.md")
+			.sort((a, b) => {
+				return a.inputPath.localeCompare(b.inputPath);
+			});
 	});
 
-	// eleventyConfig.addTransform("formatHtml", async (content, outputPath) => {
-	// 	if (outputPath?.endsWith(".html")) {
-	// 		if (!prettierOptions) {
-	// 			prettierOptions = await prettier.resolveConfig("test.html", {
-	// 				editorconfig: true,
-	// 			});
-	// 		}
-
-	// 		return prettier.format(content, {
-	// 			...prettierOptions,
-	// 			parser: "html",
-	// 		});
-	// 	}
-
-	// 	return content;
-	// });
+	// eleventyConfig.addTransform("formatHtml", formatHtml);
 
 	eleventyConfig.setUseGitIgnore(false);
 
@@ -52,8 +37,10 @@ module.exports = (eleventyConfig) => {
 
 	return {
 		dir: {
-			input: "src/site",
-			layouts: "_layouts",
+			input: "src/site/pages",
+			includes: "../_includes",
+			layouts: "../_layouts",
+			data: "../_data",
 			output: "dist",
 		},
 		pathPrefix: config.pathPrefix,
