@@ -1,10 +1,7 @@
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const prettier = require("prettier");
 const config = require("./config").default;
 
 module.exports = (eleventyConfig) => {
-	eleventyConfig.addPlugin(eleventyNavigationPlugin);
-
 	eleventyConfig.addCollection("posts", (collection) => {
 		return collection.getFilteredByGlob("src/site/posts/*.md").sort((a, b) => {
 			return a.inputPath.localeCompare(b.inputPath);
