@@ -1,8 +1,8 @@
 import React from "react";
 import { BaseLayout } from "./_includes/base-layout";
-import { defineEleventyPage } from "./_includes/define-eleventy-page";
+import { defineEleventyTemplate } from "./_includes/define-eleventy-template";
 
-export const { data, render } = defineEleventyPage(
+export const { data, render } = defineEleventyTemplate(
 	{
 		eleventyNavigation: {
 			key: "About",

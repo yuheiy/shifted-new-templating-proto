@@ -1,10 +1,10 @@
 import React from "react";
 import { Button } from "../components/button/button";
 import { BaseLayout } from "./_includes/base-layout";
-import { defineEleventyPage } from "./_includes/define-eleventy-page";
+import { defineEleventyTemplate } from "./_includes/define-eleventy-template";
 import { EleventyFilters } from "./_includes/eleventy-filters";
 
-export const { data, render } = defineEleventyPage(
+export const { data, render } = defineEleventyTemplate(
 	{
 		eleventyNavigation: {
 			key: "Home",
