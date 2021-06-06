@@ -1,4 +1,8 @@
 {
 	"extends": "./tsconfig.base.json",
+	"compilerOptions": {
+		/* Source Maps Options */
+		"inlineSourceMap": true
+	},
 	"include": ["src/components/**/*", "src/site/**/*"]
 }
