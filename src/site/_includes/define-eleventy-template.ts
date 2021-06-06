@@ -4,15 +4,18 @@ import { Merge } from "type-fest";
 import { EleventyCommonData } from "./eleventy-types";
 
 export function defineEleventyTemplate<
-	U,
-	T = U,
-	// https://www.11ty.dev/docs/data-cascade/
-	E = Merge<EleventyCommonData, T> & {
+	U extends {
 		[key: string]: any;
-	}
->(userData: U, render: (eleventyData: E) => React.ReactElement) {
+	},
+	T = unknown,
+	// https://www.11ty.dev/docs/data-cascade/
+	E = Merge<EleventyCommonData, T> &
+		U & {
+			[key: string]: any;
+		}
+>(templateData: T, render: (eleventyData: E) => React.ReactElement) {
 	return {
-		data: userData,
+		data: templateData,
 		render: (eleventyData: E) => renderReact(render(eleventyData)),
 	};
 }
