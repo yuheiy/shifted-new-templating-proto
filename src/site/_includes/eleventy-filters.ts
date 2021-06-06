@@ -5,6 +5,8 @@ const { navigation } = require("@11ty/eleventy-navigation");
 import config from "../../../config";
 import { EleventyCollection, EleventyPage } from "./eleventy-types";
 
+// todo: クラ/サバで共有できるようにする
+
 // Eleventy Provided Universal Filters
 // https://www.11ty.dev/docs/filters/#eleventy-provided-universal-filters
 // https://github.com/11ty/eleventy/blob/master/src/defaultConfig.js

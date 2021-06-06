@@ -3,6 +3,8 @@ import ReactDOMServer from "react-dom/server";
 import { Merge } from "type-fest";
 import { EleventyCommonData } from "./eleventy-types";
 
+// todo: templateDataにobject以外を渡せないようにする
+
 export function defineEleventyTemplate<
 	U extends {
 		[key: string]: any;
