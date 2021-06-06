@@ -1,6 +1,7 @@
 {
 	"files.exclude": {
 		"src/components/**/*.js": true,
+		/* https://github.com/microsoft/vscode/issues/869#issuecomment-735433238 */
 		"src/site/*[!_transforms]*/*.js": true
 	}
 }
