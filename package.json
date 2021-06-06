@@ -2,8 +2,9 @@
 	"name": "shifted-templating",
 	"scripts": {
 		"start": "concurrently --raw \"npm:start-eleventy\" \"vite\"",
-		"start-eleventy": "rm -rf dist/ && tsc && concurrently --raw \"eleventy --serve\" \"tsc --watch\"",
-		"build": "vite build && tsc && ELEVENTY_ENV=production eleventy"
+		"start-eleventy": "rm -rf dist/ && npm run tsc-eleventy && concurrently --raw \"eleventy --serve\" \"npm:tsc-eleventy -- --watch\"",
+		"build": "vite build && npm run tsc-eleventy && ELEVENTY_ENV=production eleventy",
+		"tsc-eleventy": "tsc --project tsconfig.eleventy.json"
 	},
 	"dependencies": {
 		"react": "^17.0.2",

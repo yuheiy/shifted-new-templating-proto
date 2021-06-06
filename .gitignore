@@ -3,7 +3,9 @@ node_modules
 dist
 dist-ssr
 *.local
-tsconfig.tsbuildinfo
+*.tsbuildinfo
 
-/src/**/*.js
-/src/**/*.js.map
+/src/components/**/*.js
+/src/components/**/*.js.map
+/src/site/**/*.js
+/src/site/**/*.js.map
