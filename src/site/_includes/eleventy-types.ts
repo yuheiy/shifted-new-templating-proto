@@ -11,36 +11,39 @@ export type EleventySuppliedData = {
 	pagination?: {
 		// todo
 	};
-	collections: Record<
-		EleventyCollectionNames,
-		// https://www.11ty.dev/docs/collections/#collection-item-data-structure
-		{
-			inputPath: string;
-			fileSlug: string;
-			filePathStem: string;
-			outputPath: string;
-			url: string;
-			date: Date;
-			data: {
-				[key: string]: any;
-			};
-			templateContent: string;
-		}[]
-	>;
-	page: {
-		url: string;
-		fileSlug: string;
-		filePathStem: string;
-		date: Date;
-		inputPath: string;
-		outputPath: string;
+	collections: Record<EleventyCollectionNames, EleventyCollection>;
+	page: EleventyPage;
+};
+
+// https://www.11ty.dev/docs/collections/#collection-item-data-structure
+export type EleventyCollection = {
+	inputPath: string;
+	fileSlug: string;
+	filePathStem: string;
+	outputPath: string;
+	url: string;
+	date: Date;
+	data: {
+		[key: string]: any;
 	};
+	templateContent: string;
+}[];
+
+export type EleventyPage = {
+	url: string;
+	fileSlug: string;
+	filePathStem: string;
+	date: Date;
+	inputPath: string;
+	outputPath: string;
 };
 
 // https://www.11ty.dev/docs/data-global/
 export type EleventyGlobalData = Record<
 	EleventyGlobalDataNames,
-	{ [key: string]: any }
+	{
+		[key: string]: any;
+	}
 >;
 
 // Todo: should use deep merge
