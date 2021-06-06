@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
-import logo from "./assets/logo.png";
 import { Button } from "./components/button/button";
+import logo from "./logo.png";
 
 export async function mount() {
 	if (!document.querySelector("button")) {

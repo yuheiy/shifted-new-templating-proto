@@ -1,5 +1,5 @@
 import { mount } from "./app";
-import logo from "./assets/logo.png";
+import logo from "./logo.png";
 import "./styles/main.scss";
 
 const i = document.createElement("img");
