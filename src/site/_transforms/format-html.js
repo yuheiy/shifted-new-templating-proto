@@ -2,7 +2,7 @@ const prettier = require("prettier");
 
 let prettierOptions;
 
-export async function formatHtml(content, outputPath) {
+async function formatHtml(content, outputPath) {
 	if (outputPath?.endsWith(".html")) {
 		if (!prettierOptions) {
 			prettierOptions = await prettier.resolveConfig("test.html", {
@@ -18,3 +18,5 @@ export async function formatHtml(content, outputPath) {
 
 	return content;
 }
+
+exports.formatHtml = formatHtml;
