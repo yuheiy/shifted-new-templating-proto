@@ -1,5 +1,5 @@
 const { formatHtml } = require("./src/site/_transforms/format-html");
-const config = require("./config").default;
+const config = require("./config");
 
 module.exports = (eleventyConfig) => {
 	eleventyConfig.addCollection("posts", (collection) => {
