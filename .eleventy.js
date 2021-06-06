@@ -1,6 +1,8 @@
 const prettier = require("prettier");
 const config = require("./config").default;
 
+let prettierOptions;
+
 module.exports = (eleventyConfig) => {
 	eleventyConfig.addCollection("posts", (collection) => {
 		return collection.getFilteredByGlob("src/site/posts/*.md").sort((a, b) => {
@@ -10,11 +12,14 @@ module.exports = (eleventyConfig) => {
 
 	// eleventyConfig.addTransform("formatHtml", async (content, outputPath) => {
 	// 	if (outputPath?.endsWith(".html")) {
-	// 		const options = await prettier.resolveConfig("test.html", {
-	// 			editorconfig: true,
-	// 		});
+	// 		if (!prettierOptions) {
+	// 			prettierOptions = await prettier.resolveConfig("test.html", {
+	// 				editorconfig: true,
+	// 			});
+	// 		}
+
 	// 		return prettier.format(content, {
-	// 			...options,
+	// 			...prettierOptions,
 	// 			parser: "html",
 	// 		});
 	// 	}
