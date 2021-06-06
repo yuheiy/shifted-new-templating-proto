@@ -11,19 +11,19 @@ module.exports = (eleventyConfig) => {
 		});
 	});
 
-	eleventyConfig.addTransform("formatHtml", async (content, outputPath) => {
-		if (outputPath?.endsWith(".html")) {
-			const options = await prettier.resolveConfig("test.html", {
-				editorconfig: true,
-			});
-			return prettier.format(content, {
-				...options,
-				parser: "html",
-			});
-		}
+	// eleventyConfig.addTransform("formatHtml", async (content, outputPath) => {
+	// 	if (outputPath?.endsWith(".html")) {
+	// 		const options = await prettier.resolveConfig("test.html", {
+	// 			editorconfig: true,
+	// 		});
+	// 		return prettier.format(content, {
+	// 			...options,
+	// 			parser: "html",
+	// 		});
+	// 	}
 
-		return content;
-	});
+	// 	return content;
+	// });
 
 	eleventyConfig.setUseGitIgnore(false);
 
