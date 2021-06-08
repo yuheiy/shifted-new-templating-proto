@@ -1,4 +1,4 @@
-import pkg from "../../../package.json";
+import pkg from "../../../../package.json";
 
 // manual update
 export type EleventyCollectionNames = "all" | "posts";

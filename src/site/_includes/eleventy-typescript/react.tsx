@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 import { Merge } from "type-fest";
-import { EleventyCommonData } from "./eleventy-types";
+import { EleventyCommonData } from "./types";
 
-export function defineEleventyTemplate<
+export function defineTemplate<
 	U extends {
 		[key: string]: any;
 	},

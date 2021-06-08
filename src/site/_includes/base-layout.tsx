@@ -1,7 +1,6 @@
 import React from "react";
 import { PageHead } from "../../components/page-head/page-head";
-import { EleventyFilters } from "../_includes/eleventy-filters";
-import { EleventyCommonData } from "./eleventy-types";
+import { EleventyCommonData, EleventyFilters } from "./eleventy-typescript";
 
 type BaseLayoutProps = {
 	eleventyData: Partial<EleventyCommonData> & {

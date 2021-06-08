@@ -2,8 +2,8 @@ const urlFilter = require("@11ty/eleventy/src/Filters/Url");
 const slugFilter = require("@11ty/eleventy/src/Filters/Slug");
 const getCollectionItemFilter = require("@11ty/eleventy/src/Filters/getCollectionItem");
 const { navigation } = require("@11ty/eleventy-navigation");
-import config from "../../../config";
-import { EleventyCollection, EleventyPage } from "./eleventy-types";
+import config from "../../../../config";
+import { EleventyCollection, EleventyPage } from "./types";
 
 // todo: クラ/サバで共有できるようにする
 
