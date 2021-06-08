@@ -3,12 +3,12 @@ import { PageHead } from "../../components/page-head/page-head";
 import { EleventyFilters } from "../_includes/eleventy-filters";
 import { EleventyCommonData } from "./eleventy-types";
 
-export interface BaseLayoutProps {
+type BaseLayoutProps = {
 	eleventyData: Partial<EleventyCommonData> & {
 		[key: string]: any;
 	};
 	children: React.ReactNode;
-}
+};
 
 export function BaseLayout({ eleventyData, children }: BaseLayoutProps) {
 	return (

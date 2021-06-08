@@ -1,11 +1,11 @@
 import React from "react";
 
-export interface PageHeadProps {
+type PageHeadProps = {
 	pages: any;
 	eleventyNavigation?: {
 		key: string;
 	};
-}
+};
 
 export function PageHead({ pages, eleventyNavigation }: PageHeadProps) {
 	return (
