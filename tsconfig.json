@@ -1,6 +1,7 @@
 {
 	"extends": "./tsconfig.base.json",
 	"compilerOptions": {
+		/* Basic Options */
 		"noEmit": true
 	}
 }
