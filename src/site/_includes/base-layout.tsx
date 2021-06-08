@@ -23,6 +23,8 @@ export function BaseLayout({ eleventyData, children }: BaseLayoutProps) {
 
 				<meta name="viewport" content="width=device-width" />
 				<meta name="description" content={eleventyData.description} />
+				<meta name="twitter:card" content="summary_large_image" />
+
 				<meta
 					property="og:title"
 					content={
@@ -53,8 +55,6 @@ export function BaseLayout({ eleventyData, children }: BaseLayoutProps) {
 					property="og:locale"
 					content={`${eleventyData.metadata.lang}_${eleventyData.metadata.region}`}
 				/>
-
-				<meta name="twitter:card" content="summary_large_image" />
 
 				<link
 					rel="cannonical"
