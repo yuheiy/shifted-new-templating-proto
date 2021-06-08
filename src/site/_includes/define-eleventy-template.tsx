@@ -3,13 +3,13 @@ import ReactDOMServer from "react-dom/server";
 import { Merge } from "type-fest";
 import { EleventyCommonData } from "./eleventy-types";
 
-// todo: templateDataにobject以外を渡せないようにする
-
 export function defineEleventyTemplate<
 	U extends {
 		[key: string]: any;
 	},
-	T = unknown,
+	T extends {
+		[key: string]: any;
+	} = unknown,
 	// https://www.11ty.dev/docs/data-cascade/
 	E = Merge<EleventyCommonData, T> &
 		U & {
@@ -18,11 +18,13 @@ export function defineEleventyTemplate<
 >(templateData: T, render: (eleventyData: E) => React.ReactElement) {
 	return {
 		data: templateData,
-		render: (eleventyData: E) => renderReact(render(eleventyData)),
+		render: (eleventyData: E) => renderToHTML(render(eleventyData)),
 	};
 }
 
-function renderReact(element: React.ReactElement) {
-	const rendered = ReactDOMServer.renderToStaticMarkup(element);
-	return "<!doctype html>" + rendered;
+function renderToHTML(element: React.ReactElement) {
+	const rendered = ReactDOMServer.renderToStaticMarkup(
+		<React.StrictMode>{element}</React.StrictMode>
+	);
+	return "<!DOCTYPE html>" + rendered;
 }
