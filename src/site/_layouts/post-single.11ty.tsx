@@ -2,7 +2,7 @@ import React from "react";
 import { BaseLayout } from "../_includes/base-layout";
 import { defineTemplate } from "../_includes/eleventy-typescript/react";
 
-export const { data, render } = defineTemplate<{
+module.exports = defineTemplate<{
 	title?: string;
 	content: string;
 }>(

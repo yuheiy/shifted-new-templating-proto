@@ -4,7 +4,7 @@ import { BaseLayout } from "../_includes/base-layout";
 import { EleventyFilters } from "../_includes/eleventy-typescript";
 import { defineTemplate } from "../_includes/eleventy-typescript/react";
 
-export const { data, render } = defineTemplate(
+module.exports = defineTemplate(
 	{
 		eleventyNavigation: {
 			key: "Home",
