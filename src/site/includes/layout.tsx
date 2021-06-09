@@ -27,6 +27,7 @@ export function Layout({ eleventyData, children }: LayoutProps) {
 
 				<meta name="viewport" content="width=device-width" />
 				<meta name="description" content={eleventyData.description} />
+				<meta name="format-detection" content="telephone=no" />
 				<meta name="twitter:card" content="summary_large_image" />
 
 				<meta
