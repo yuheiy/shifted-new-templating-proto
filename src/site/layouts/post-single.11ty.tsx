@@ -11,7 +11,7 @@ module.exports = defineTemplate<{
 	},
 	(eleventyData) => {
 		const title = eleventyData.title;
-		if (!title) {
+		if (title === undefined) {
 			throw new Error("`title` is required");
 		}
 

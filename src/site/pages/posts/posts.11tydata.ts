@@ -1,3 +1,1 @@
-module.exports = {
-	layout: "post-single",
-};
+export const layout = "post-single";

@@ -6,16 +6,19 @@ import React from "react";
 import ReactDOMServer from "react-dom/server";
 
 export function defineTemplate<
-	U extends {
+	CascadedData extends {
 		[key: string]: any;
 	},
-	T extends EleventyTemplateInputData = unknown,
+	TemplateData extends EleventyTemplateInputData = unknown,
 	// https://www.11ty.dev/docs/data-cascade/
-	E = EleventySuppliedData & T & U
->(templateData: T, render: (eleventyData: E) => React.ReactElement) {
+	EleventyData = EleventySuppliedData & TemplateData & CascadedData
+>(
+	templateData: TemplateData,
+	render: (eleventyData: EleventyData) => React.ReactElement
+) {
 	return {
 		data: templateData,
-		render: (eleventyData: E) => renderToHTML(render(eleventyData)),
+		render: (eleventyData: EleventyData) => renderToHTML(render(eleventyData)),
 	};
 }
 
