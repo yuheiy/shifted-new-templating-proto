@@ -1,13 +1,8 @@
-import * as config from "../config";
 import { mount } from "./app";
 import logo from "./logo.png";
-import {
-	EleventyFilters,
-	EleventyTypeScriptConfig,
-} from "./site/includes/eleventy-typescript";
+import { EleventyFilters } from "./site/includes/eleventy-typescript";
+import "./site/includes/setup";
 import "./styles/main.scss";
-
-EleventyTypeScriptConfig.pathPrefix = config.pathPrefix;
 
 const i = document.createElement("img");
 i.src = logo;
