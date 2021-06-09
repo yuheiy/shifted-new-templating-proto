@@ -10,15 +10,17 @@ type BaseLayoutProps = {
 };
 
 export function BaseLayout({ eleventyData, children }: BaseLayoutProps) {
+	const origin = `${eleventyData.metadata.scheme}://${eleventyData.metadata.domain}`;
+
 	return (
 		<html lang={eleventyData.metadata.lang}>
 			<head>
 				<meta charSet={eleventyData.metadata.encoding} />
 
 				<title>
-					{eleventyData.isHome
-						? eleventyData.metadata.siteTitle
-						: `${eleventyData.title} - ${eleventyData.metadata.siteTitle}`}
+					{eleventyData.title
+						? `${eleventyData.title} - ${eleventyData.metadata.siteTitle}`
+						: eleventyData.metadata.siteTitle}
 				</title>
 
 				<meta name="viewport" content="width=device-width" />
@@ -27,24 +29,16 @@ export function BaseLayout({ eleventyData, children }: BaseLayoutProps) {
 
 				<meta
 					property="og:title"
-					content={
-						eleventyData.isHome
-							? eleventyData.metadata.siteTitle
-							: eleventyData.title
-					}
+					content={eleventyData.title || eleventyData.metadata.siteTitle}
 				/>
 				<meta property="og:type" content="website" />
 				<meta
 					property="og:image"
-					content={`${eleventyData.metadata.scheme}://${
-						eleventyData.metadata.domain
-					}${EleventyFilters.url("/ogp.png")}`}
+					content={`${origin}${EleventyFilters.url("/ogp.png")}`}
 				/>
 				<meta
 					property="og:url"
-					content={`${eleventyData.metadata.scheme}://${
-						eleventyData.metadata.domain
-					}${EleventyFilters.url(eleventyData.page.url)}`}
+					content={`${origin}${EleventyFilters.url(eleventyData.page.url)}`}
 				/>
 				<meta property="og:description" content={eleventyData.description} />
 				<meta
