@@ -1,3 +1,1 @@
-module.exports = {
-	isDev: process.env.ELEVENTY_ENV !== "production",
-};
+export const isDev = process.env.ELEVENTY_ENV !== "production";

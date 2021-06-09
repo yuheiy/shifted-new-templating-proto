@@ -1,5 +1,7 @@
 import React from "react";
 import { PageHead } from "../../components/page-head/page-head";
+import { isDev } from "../data/env";
+import * as metadata from "../data/metadata";
 import { EleventyCommonData, EleventyFilters } from "./eleventy-typescript";
 
 type BaseLayoutProps = {
@@ -10,17 +12,17 @@ type BaseLayoutProps = {
 };
 
 export function BaseLayout({ eleventyData, children }: BaseLayoutProps) {
-	const origin = `${eleventyData.metadata.scheme}://${eleventyData.metadata.domain}`;
+	const origin = `${metadata.scheme}://${metadata.domain}`;
 
 	return (
-		<html lang={eleventyData.metadata.lang}>
+		<html lang={metadata.lang}>
 			<head>
-				<meta charSet={eleventyData.metadata.encoding} />
+				<meta charSet={metadata.encoding} />
 
 				<title>
 					{eleventyData.title
-						? `${eleventyData.title} - ${eleventyData.metadata.siteTitle}`
-						: eleventyData.metadata.siteTitle}
+						? `${eleventyData.title} - ${metadata.siteTitle}`
+						: metadata.siteTitle}
 				</title>
 
 				<meta name="viewport" content="width=device-width" />
@@ -29,7 +31,7 @@ export function BaseLayout({ eleventyData, children }: BaseLayoutProps) {
 
 				<meta
 					property="og:title"
-					content={eleventyData.title || eleventyData.metadata.siteTitle}
+					content={eleventyData.title || metadata.siteTitle}
 				/>
 				<meta property="og:type" content="website" />
 				<meta
@@ -41,13 +43,10 @@ export function BaseLayout({ eleventyData, children }: BaseLayoutProps) {
 					content={`${origin}${EleventyFilters.url(eleventyData.page.url)}`}
 				/>
 				<meta property="og:description" content={eleventyData.description} />
-				<meta
-					property="og:site_name"
-					content={eleventyData.metadata.siteTitle}
-				/>
+				<meta property="og:site_name" content={metadata.siteTitle} />
 				<meta
 					property="og:locale"
-					content={`${eleventyData.metadata.lang}_${eleventyData.metadata.region}`}
+					content={`${metadata.lang}_${metadata.region}`}
 				/>
 
 				<link
@@ -60,7 +59,7 @@ export function BaseLayout({ eleventyData, children }: BaseLayoutProps) {
 					href={EleventyFilters.url("/apple-touch-icon.png")}
 				/>
 
-				{eleventyData.env.isDev && (
+				{isDev && (
 					<>
 						<script
 							type="module"

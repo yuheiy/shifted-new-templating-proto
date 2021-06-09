@@ -2,7 +2,6 @@ import pkg from "../../../../package.json";
 
 // manual update
 export type EleventyCollectionNames = "all" | "posts";
-export type EleventyGlobalDataNames = "env" | "manifest" | "metadata";
 
 // https://www.11ty.dev/docs/data-eleventy-supplied/
 export type EleventySuppliedData = {
@@ -39,12 +38,11 @@ export type EleventyPage = {
 };
 
 // https://www.11ty.dev/docs/data-global/
-export type EleventyGlobalData = Record<
-	EleventyGlobalDataNames,
-	{
+export type EleventyGlobalData = {
+	[key: string]: {
 		[key: string]: any;
-	}
->;
+	};
+};
 
 // Todo: should use deep merge
 export type EleventyCommonData = EleventySuppliedData & EleventyGlobalData;
