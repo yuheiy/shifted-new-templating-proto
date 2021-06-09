@@ -21,14 +21,22 @@ module.exports = defineTemplate(
 					</p>
 					<p>Posts:</p>
 					<ol>
-						{eleventyData.collections.posts.map((post) => {
-							return (
-								<li key="_">
-									<a href={EleventyFilters.url(post.url)}>{post.data.title}</a>
-								</li>
-							);
-						})}
+						{eleventyData.collections.post
+							.slice(-3)
+							.reverse()
+							.map((post) => {
+								return (
+									<li key="_">
+										<a href={EleventyFilters.url(post.url)}>
+											{post.data.title}
+										</a>
+									</li>
+								);
+							})}
 					</ol>
+					<p>
+						<a href={EleventyFilters.url("/posts/")}>View All</a>
+					</p>
 				</div>
 			</Layout>
 		);

@@ -2,7 +2,7 @@ const { formatHtml } = require("./src/site/transforms/format-html");
 const config = require("./config");
 
 module.exports = (eleventyConfig) => {
-	eleventyConfig.addCollection("posts", (collection) => {
+	eleventyConfig.addCollection("post", (collection) => {
 		return collection
 			.getFilteredByGlob("src/site/pages/posts/*.md")
 			.sort((a, b) => {
