@@ -1,11 +1,11 @@
-import pkg from "../../../../package.json";
+import { JsonObject } from "type-fest";
 
 // manual update
 export type EleventyCollectionNames = "all" | "posts";
 
 // https://www.11ty.dev/docs/data-eleventy-supplied/
 export type EleventySuppliedData = {
-	pkg: typeof pkg;
+	pkg: JsonObject;
 	// https://www.11ty.dev/docs/pagination/
 	pagination?: {
 		// todo
@@ -44,5 +44,4 @@ export type EleventyGlobalData = {
 	};
 };
 
-// Todo: should use deep merge
 export type EleventyCommonData = EleventySuppliedData & EleventyGlobalData;
