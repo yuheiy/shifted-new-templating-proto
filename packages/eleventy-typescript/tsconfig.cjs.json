@@ -2,8 +2,9 @@
 	"extends": "../../tsconfig.base.json",
 	"compilerOptions": {
 		/* Basic Options */
+		"module": "CommonJS",
 		"sourceMap": true,
-		"outDir": "./esm"
+		"outDir": "./cjs"
 	},
 	"include": ["src/**/*"]
 }

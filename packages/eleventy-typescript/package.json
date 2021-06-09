@@ -1,8 +1,6 @@
 {
 	"name": "eleventy-typescript",
-	"main": "./cjs/index.js",
-	"module": "./esm/index.js",
-	"types": "./index.d.ts",
+	"type": "module",
 	"exports": {
 		".": {
 			"import": "./esm/index.js",
@@ -13,9 +11,10 @@
 			"default": "./cjs/react.js"
 		}
 	},
+	"types": "./index.d.ts",
 	"scripts": {
 		"prebuild": "rm -rf cjs esm *.d.ts",
-		"build": "tsc --project . && tsc --project tsconfig.module.json",
+		"build": "tsc --project . && tsc --project tsconfig.cjs.json",
 		"watch": "tsc --project . --watch",
 		"postinstall": "npm run build"
 	},
