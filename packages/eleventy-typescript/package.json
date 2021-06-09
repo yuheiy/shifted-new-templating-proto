@@ -14,7 +14,7 @@
 		}
 	},
 	"scripts": {
-		"prebuild": "rm -rf cjs esm",
+		"prebuild": "rm -rf cjs esm types",
 		"build": "tsc --project . && tsc --project tsconfig.module.json",
 		"watch": "tsc --project . --watch",
 		"postinstall": "npm run build"
@@ -23,8 +23,12 @@
 		"typescript": "^4.3.2"
 	},
 	"peerDependencies": {
+		"@11ty/eleventy": "*",
+		"@types/react": "*",
+		"@types/react-dom": "*",
 		"path-browserify": "*",
 		"react": "*",
-		"react-dom": "*"
+		"react-dom": "*",
+		"valid-url": "*"
 	}
 }
