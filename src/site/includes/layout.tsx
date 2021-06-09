@@ -1,11 +1,12 @@
+import { EleventySuppliedData } from "@11ty/eleventy";
 import React from "react";
 import { PageHead } from "../../components/page-head/page-head";
 import { isDev } from "../data/env";
 import * as metadata from "../data/metadata";
-import { EleventyCommonData, EleventyFilters } from "./eleventy-typescript";
+import { EleventyFilters } from "./eleventy-typescript";
 
 type LayoutProps = {
-	eleventyData: Partial<EleventyCommonData> & {
+	eleventyData: Partial<EleventySuppliedData> & {
 		[key: string]: any;
 	};
 	children: React.ReactNode;
