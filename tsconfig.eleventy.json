@@ -6,5 +6,5 @@
 		/* Source Maps Options */
 		"inlineSourceMap": true
 	},
-	"include": ["src/components/**/*", "src/site/**/*"]
+	"include": ["config.ts", "src/components/**/*", "src/site/**/*"]
 }

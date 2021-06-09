@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import config from "./config";
+import * as config from "./config";
 
 export default defineConfig({
 	base: config.pathPrefix,

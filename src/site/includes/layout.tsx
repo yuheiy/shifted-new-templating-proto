@@ -1,4 +1,5 @@
 import { EleventySuppliedData } from "@11ty/eleventy";
+import { navigation } from "@11ty/eleventy-navigation";
 import React from "react";
 import { PageHead } from "../../components/page-head/page-head";
 import { isDev } from "../data/env";
@@ -83,9 +84,7 @@ export function Layout({ eleventyData, children }: LayoutProps) {
 
 			<body>
 				<PageHead
-					pages={EleventyFilters.eleventyNavigation(
-						eleventyData.collections.all
-					)}
+					pages={navigation.find(eleventyData.collections.all)}
 					eleventyNavigation={eleventyData.eleventyNavigation}
 				/>
 

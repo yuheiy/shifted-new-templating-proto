@@ -5,6 +5,7 @@ dist-ssr
 *.local
 *.tsbuildinfo
 
+/config.js
 /src/components/**/*.js
 /src/site/**/*.js
 !/src/site/transforms/**/*.js

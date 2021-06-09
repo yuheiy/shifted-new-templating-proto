@@ -1,5 +1,6 @@
 {
 	"files.exclude": {
+		"config.js": true,
 		"src/components/**/*.js": true,
 		/* https://github.com/microsoft/vscode/issues/869#issuecomment-735433238 */
 		"src/site/*[!transforms]*/*.js": true
