@@ -1,6 +1,6 @@
 import React from "react";
-import { BaseLayout } from "../includes/base-layout";
 import { defineTemplate } from "../includes/eleventy-typescript/react";
+import { Layout } from "../includes/layout";
 
 module.exports = defineTemplate(
 	{
@@ -13,7 +13,7 @@ module.exports = defineTemplate(
 	},
 	(eleventyData) => {
 		return (
-			<BaseLayout eleventyData={eleventyData}>
+			<Layout eleventyData={eleventyData}>
 				<div className="wrapper">
 					<h1>About</h1>
 					<p>
@@ -23,7 +23,7 @@ module.exports = defineTemplate(
 						quam officiis nihil quia distinctio.
 					</p>
 				</div>
-			</BaseLayout>
+			</Layout>
 		);
 	}
 );

@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "../../components/button/button";
-import { BaseLayout } from "../includes/base-layout";
 import { EleventyFilters } from "../includes/eleventy-typescript";
 import { defineTemplate } from "../includes/eleventy-typescript/react";
+import { Layout } from "../includes/layout";
 
 module.exports = defineTemplate(
 	{
@@ -14,7 +14,7 @@ module.exports = defineTemplate(
 	},
 	(eleventyData) => {
 		return (
-			<BaseLayout eleventyData={eleventyData}>
+			<Layout eleventyData={eleventyData}>
 				<div className="wrapper">
 					<p>
 						<Button>hi</Button>
@@ -30,7 +30,7 @@ module.exports = defineTemplate(
 						})}
 					</ol>
 				</div>
-			</BaseLayout>
+			</Layout>
 		);
 	}
 );

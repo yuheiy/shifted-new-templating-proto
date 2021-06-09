@@ -1,6 +1,6 @@
 import React from "react";
-import { BaseLayout } from "../includes/base-layout";
 import { defineTemplate } from "../includes/eleventy-typescript/react";
+import { Layout } from "../includes/layout";
 
 module.exports = defineTemplate<{
 	title?: string;
@@ -16,13 +16,13 @@ module.exports = defineTemplate<{
 		}
 
 		return (
-			<BaseLayout eleventyData={eleventyData}>
+			<Layout eleventyData={eleventyData}>
 				<h1>{title}</h1>
 				<div
 					className="wrapper"
 					dangerouslySetInnerHTML={{ __html: eleventyData.content }}
 				/>
-			</BaseLayout>
+			</Layout>
 		);
 	}
 );

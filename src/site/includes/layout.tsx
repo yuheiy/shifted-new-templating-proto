@@ -4,14 +4,14 @@ import { isDev } from "../data/env";
 import * as metadata from "../data/metadata";
 import { EleventyCommonData, EleventyFilters } from "./eleventy-typescript";
 
-type BaseLayoutProps = {
+type LayoutProps = {
 	eleventyData: Partial<EleventyCommonData> & {
 		[key: string]: any;
 	};
 	children: React.ReactNode;
 };
 
-export function BaseLayout({ eleventyData, children }: BaseLayoutProps) {
+export function Layout({ eleventyData, children }: LayoutProps) {
 	const origin = `${metadata.scheme}://${metadata.domain}`;
 
 	return (
