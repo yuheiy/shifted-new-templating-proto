@@ -1,4 +1,5 @@
 import React from "react";
+import { EleventyFilters } from "../../site/includes/eleventy-typescript";
 
 type PageHeadProps = {
 	pages: any;
@@ -16,7 +17,9 @@ export function PageHead({ pages, eleventyNavigation }: PageHeadProps) {
 						<p>
 							<a
 								href={
-									page.key !== eleventyNavigation?.key ? page.url : undefined
+									page.key !== eleventyNavigation?.key
+										? EleventyFilters.url(page.url)
+										: undefined
 								}
 							>
 								{page.title}
@@ -29,7 +32,7 @@ export function PageHead({ pages, eleventyNavigation }: PageHeadProps) {
 										<a
 											href={
 												page.key !== eleventyNavigation?.key
-													? page.url
+													? EleventyFilters.url(page.url)
 													: undefined
 											}
 										>

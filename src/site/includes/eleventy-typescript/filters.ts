@@ -3,14 +3,14 @@ import { navigation } from "@11ty/eleventy-navigation";
 import getCollectionItemFilter from "@11ty/eleventy/src/Filters/GetCollectionItem";
 import slugFilter from "@11ty/eleventy/src/Filters/Slug";
 import urlFilter from "@11ty/eleventy/src/Filters/Url";
-const config = require("../../../../config");
+import { EleventyTypeScriptConfig } from "./config";
 
 export const EleventyFilters = {
 	// Eleventy Provided Universal Filters
 	// https://www.11ty.dev/docs/filters/#eleventy-provided-universal-filters
 	// https://github.com/11ty/eleventy/blob/master/src/defaultConfig.js
 
-	url: (url: string) => urlFilter(url, config.pathPrefix),
+	url: (url: string) => urlFilter(url, EleventyTypeScriptConfig.pathPrefix),
 
 	slug: slugFilter,
 

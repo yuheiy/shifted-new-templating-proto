@@ -1,8 +1,11 @@
-import pkg from "../../../../package.json";
+let _pathPrefix = "/";
 
-declare module "@11ty/eleventy" {
-	interface Config {
-		pkg: typeof pkg;
-		collectionNames: "all" | "post";
-	}
-}
+export const EleventyTypeScriptConfig = {
+	get pathPrefix() {
+		return _pathPrefix;
+	},
+
+	set pathPrefix(value: string) {
+		_pathPrefix = value;
+	},
+};

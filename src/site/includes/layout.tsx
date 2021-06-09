@@ -3,7 +3,13 @@ import React from "react";
 import { PageHead } from "../../components/page-head/page-head";
 import { isDev } from "../data/env";
 import * as metadata from "../data/metadata";
-import { EleventyFilters } from "./eleventy-typescript";
+import {
+	EleventyFilters,
+	EleventyTypeScriptConfig,
+} from "./eleventy-typescript";
+const config = require("../../../config");
+
+EleventyTypeScriptConfig.pathPrefix = config.pathPrefix;
 
 type LayoutProps = {
 	eleventyData: Partial<EleventySuppliedData> & {
