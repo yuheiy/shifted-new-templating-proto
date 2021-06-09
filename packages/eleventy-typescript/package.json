@@ -1,6 +1,5 @@
 {
 	"name": "eleventy-typescript",
-	"type": "module",
 	"exports": {
 		".": {
 			"import": "./esm/index.js",
