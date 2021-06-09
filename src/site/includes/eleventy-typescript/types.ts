@@ -1,11 +1,11 @@
-import { JsonObject } from "type-fest";
+import pkg from "../../../../package.json";
 
 // manual update
 export type EleventyCollectionNames = "all" | "posts";
 
 // https://www.11ty.dev/docs/data-eleventy-supplied/
 export type EleventySuppliedData = {
-	pkg: JsonObject;
+	pkg: typeof pkg;
 	// https://www.11ty.dev/docs/pagination/
 	pagination?: {
 		// todo
