@@ -1,5 +1,5 @@
+import { EleventyFilters } from "eleventy-typescript";
 import React from "react";
-import { EleventyFilters } from "../../site/includes/eleventy-typescript";
 
 type PageHeadProps = {
 	pages: any;

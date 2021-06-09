@@ -1,6 +1,6 @@
+import { EleventyFilters } from "eleventy-typescript";
 import { mount } from "./app";
 import logo from "./logo.png";
-import { EleventyFilters } from "./site/includes/eleventy-typescript";
 import "./site/includes/setup";
 import "./styles/main.scss";
 

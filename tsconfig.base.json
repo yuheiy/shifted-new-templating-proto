@@ -8,7 +8,6 @@
 		"jsx": "react",
 		/* Module Resolution Options */
 		"moduleResolution": "node",
-		"typeRoots": ["./typings", "./node_modules/@types"],
 		"esModuleInterop": true,
 		/* Advanced Options */
 		"skipLibCheck": true,

@@ -1,5 +1,5 @@
+import { defineTemplate } from "eleventy-typescript/react";
 import React from "react";
-import { defineTemplate } from "../includes/eleventy-typescript/react";
 import { Layout } from "../includes/layout";
 
 module.exports = defineTemplate<{

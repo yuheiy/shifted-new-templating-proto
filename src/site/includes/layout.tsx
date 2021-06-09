@@ -1,10 +1,10 @@
 import { EleventySuppliedData } from "@11ty/eleventy";
 import { navigation } from "@11ty/eleventy-navigation";
+import { EleventyFilters } from "eleventy-typescript";
 import React from "react";
 import { PageHead } from "../../components/page-head/page-head";
 import { isDev } from "../data/env";
 import * as metadata from "../data/metadata";
-import { EleventyFilters } from "./eleventy-typescript";
 import "./setup";
 
 type LayoutProps = {

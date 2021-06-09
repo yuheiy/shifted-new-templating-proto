@@ -1,0 +1,30 @@
+{
+	"name": "eleventy-typescript",
+	"main": "./lib/index.js",
+	"module": "./esm/index.js",
+	"types": "./types/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./esm/index.js",
+			"default": "./cjs/index.js"
+		},
+		"./react": {
+			"import": "./esm/react.js",
+			"default": "./cjs/react.js"
+		}
+	},
+	"scripts": {
+		"prebuild": "rm -rf cjs esm",
+		"build": "tsc --project . && tsc --project tsconfig.module.json",
+		"watch": "tsc --project . --watch",
+		"postinstall": "npm run build"
+	},
+	"devDependencies": {
+		"typescript": "^4.3.2"
+	},
+	"peerDependencies": {
+		"path-browserify": "*",
+		"react": "*",
+		"react-dom": "*"
+	}
+}
