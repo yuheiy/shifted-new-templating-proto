@@ -6,6 +6,8 @@
 		"declaration": true,
 		"sourceMap": true,
 		"outDir": "./cjs",
-		"declarationDir": "./types"
-	}
+		"declarationDir": "./"
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules"]
 }

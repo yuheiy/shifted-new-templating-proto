@@ -1,8 +1,8 @@
 {
 	"name": "eleventy-typescript",
-	"main": "./lib/index.js",
+	"main": "./cjs/index.js",
 	"module": "./esm/index.js",
-	"types": "./types/index.d.ts",
+	"types": "./index.d.ts",
 	"exports": {
 		".": {
 			"import": "./esm/index.js",
@@ -14,13 +14,13 @@
 		}
 	},
 	"scripts": {
-		"prebuild": "rm -rf cjs esm types",
+		"prebuild": "rm -rf cjs esm *.d.ts",
 		"build": "tsc --project . && tsc --project tsconfig.module.json",
 		"watch": "tsc --project . --watch",
 		"postinstall": "npm run build"
 	},
 	"devDependencies": {
-		"typescript": "^4.3.2"
+		"typescript": "*"
 	},
 	"peerDependencies": {
 		"@11ty/eleventy": "*",

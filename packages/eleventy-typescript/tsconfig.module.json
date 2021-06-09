@@ -4,5 +4,6 @@
 		/* Basic Options */
 		"sourceMap": true,
 		"outDir": "./esm"
-	}
+	},
+	"include": ["src/**/*"]
 }
