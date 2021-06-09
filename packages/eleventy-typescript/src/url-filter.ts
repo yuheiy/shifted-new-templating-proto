@@ -4,7 +4,7 @@
 import path from "path-browserify";
 import validUrl from "valid-url";
 
-export default function (url, pathPrefix) {
+export default function (url: string, pathPrefix: string) {
 	// work with undefined
 	url = url || "";
 
@@ -39,7 +39,7 @@ export default function (url, pathPrefix) {
 	return normUrl;
 }
 
-function normalizeUrlPath(...urlPaths) {
+function normalizeUrlPath(...urlPaths: string[]) {
 	const urlPath = path.join(...urlPaths);
 	return urlPath.replace(/\/+$/, "/");
 }
