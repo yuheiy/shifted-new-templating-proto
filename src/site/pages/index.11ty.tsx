@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "../../components/button/button";
-import { BaseLayout } from "../_includes/base-layout";
-import { EleventyFilters } from "../_includes/eleventy-typescript";
-import { defineTemplate } from "../_includes/eleventy-typescript/react";
+import { BaseLayout } from "../includes/base-layout";
+import { EleventyFilters } from "../includes/eleventy-typescript";
+import { defineTemplate } from "../includes/eleventy-typescript/react";
 
 module.exports = defineTemplate(
 	{

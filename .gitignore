@@ -7,4 +7,4 @@ dist-ssr
 
 /src/components/**/*.js
 /src/site/**/*.js
-!/src/site/_transforms/**/*.js
+!/src/site/transforms/**/*.js

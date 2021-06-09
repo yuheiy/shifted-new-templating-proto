@@ -1,4 +1,4 @@
-const { formatHtml } = require("./src/site/_transforms/format-html");
+const { formatHtml } = require("./src/site/transforms/format-html");
 const config = require("./config");
 
 module.exports = (eleventyConfig) => {
@@ -38,9 +38,9 @@ module.exports = (eleventyConfig) => {
 	return {
 		dir: {
 			input: "src/site/pages",
-			includes: "../_includes",
-			layouts: "../_layouts",
-			data: "../_data",
+			includes: "../includes",
+			layouts: "../layouts",
+			data: "../data",
 			output: "dist",
 		},
 		pathPrefix: config.pathPrefix,
