@@ -22,6 +22,7 @@
 	},
 	"peerDependencies": {
 		"@11ty/eleventy": "*",
+		"@11ty/eleventy-navigation": "*",
 		"@types/react": "*",
 		"@types/react-dom": "*",
 		"path-browserify": "*",
