@@ -80,7 +80,7 @@ export function Layout({ eleventyData, children }: LayoutProps) {
 			<body>
 				<PageHead
 					pages={navigation.find(eleventyData.collections.all)}
-					eleventyNavigation={eleventyData.eleventyNavigation}
+					eleventyNavigationKey={eleventyData.eleventyNavigation?.key}
 				/>
 
 				{children}

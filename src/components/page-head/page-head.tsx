@@ -1,14 +1,13 @@
+import { navigation } from "@11ty/eleventy-navigation";
 import { EleventyFilters } from "eleventy-typescript";
 import React from "react";
 
 type PageHeadProps = {
-	pages: any;
-	eleventyNavigation?: {
-		key: string;
-	};
+	pages: ReturnType<typeof navigation.find>;
+	eleventyNavigationKey?: string;
 };
 
-export function PageHead({ pages, eleventyNavigation }: PageHeadProps) {
+export function PageHead({ pages, eleventyNavigationKey }: PageHeadProps) {
 	return (
 		<header>
 			{pages.map((page) => {
@@ -17,7 +16,7 @@ export function PageHead({ pages, eleventyNavigation }: PageHeadProps) {
 						<p>
 							<a
 								href={
-									page.key !== eleventyNavigation?.key
+									page.key !== eleventyNavigationKey
 										? EleventyFilters.url(page.url)
 										: undefined
 								}
@@ -31,7 +30,7 @@ export function PageHead({ pages, eleventyNavigation }: PageHeadProps) {
 									<li key="_">
 										<a
 											href={
-												page.key !== eleventyNavigation?.key
+												page.key !== eleventyNavigationKey
 													? EleventyFilters.url(page.url)
 													: undefined
 											}

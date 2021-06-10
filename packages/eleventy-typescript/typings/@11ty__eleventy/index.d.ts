@@ -1,4 +1,6 @@
 declare module "@11ty/eleventy" {
+	import { EleventyNavigationInput } from "@11ty/eleventy-navigation";
+
 	interface Config {
 		// pkg: typeof pkg;
 		// collectionNames: 'all' | 'post';
@@ -40,9 +42,7 @@ declare module "@11ty/eleventy" {
 		outputPath: string;
 		url: string;
 		date: Date;
-		data: {
-			[key: string]: any;
-		};
+		data: EleventyTemplateInputData;
 		templateContent: string;
 	}
 
@@ -78,14 +78,7 @@ declare module "@11ty/eleventy" {
 		// https://www.11ty.dev/docs/permalinks/
 		permalink?: string | ((data: E) => string) | boolean;
 		// https://www.11ty.dev/docs/plugins/navigation/
-		eleventyNavigation?: {
-			key: string;
-			parent?: string;
-			title?: string;
-			order?: number;
-			url?: string;
-			excerpt?: string;
-		};
+		eleventyNavigation?: EleventyNavigationInput;
 		[key: string]: any;
 	}
 }
