@@ -8,6 +8,10 @@ type PageHeadProps = {
 };
 
 export function PageHead({ pages, eleventyNavigationKey }: PageHeadProps) {
+	function isCurrent(page) {
+		return page.key === eleventyNavigationKey;
+	}
+
 	return (
 		<header>
 			{pages.map((page) => {
@@ -16,9 +20,7 @@ export function PageHead({ pages, eleventyNavigationKey }: PageHeadProps) {
 						<p>
 							<a
 								href={
-									page.key !== eleventyNavigationKey
-										? EleventyFilters.url(page.url)
-										: undefined
+									!isCurrent(page) ? EleventyFilters.url(page.url) : undefined
 								}
 							>
 								{page.title}
@@ -30,7 +32,7 @@ export function PageHead({ pages, eleventyNavigationKey }: PageHeadProps) {
 									<li key="_">
 										<a
 											href={
-												page.key !== eleventyNavigationKey
+												!isCurrent(page)
 													? EleventyFilters.url(page.url)
 													: undefined
 											}
