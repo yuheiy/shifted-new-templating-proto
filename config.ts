@@ -1,3 +1,5 @@
-// root: `/`
-// subdir: `/path/to/subdir/`
-export const pathPrefix = "/";
+export const config = {
+	// root: `/`
+	// subdir: `/path/to/subdir/`
+	pathPrefix: "/",
+};
