@@ -3,8 +3,7 @@
 	"compilerOptions": {
 		/* Basic Options */
 		"module": "CommonJS",
-		/* Source Maps Options */
-		"inlineSourceMap": true
+		"outDir": "./dist-eleventy"
 	},
 	"include": ["config.ts", "src/components/**/*", "src/site/**/*"]
 }

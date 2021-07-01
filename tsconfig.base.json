@@ -6,6 +6,7 @@
 		"module": "ESNext",
 		"lib": ["ESNext", "DOM"],
 		"jsx": "react",
+		"sourceMap": true,
 		/* Module Resolution Options */
 		"moduleResolution": "node",
 		"esModuleInterop": true,

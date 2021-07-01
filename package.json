@@ -2,10 +2,12 @@
 	"name": "shifted-templating",
 	"scripts": {
 		"start": "concurrently --raw \"npm:start-eleventy\" \"vite\"",
-		"start-eleventy": "rm -rf dist/ && npm run tsc-eleventy && concurrently --raw \"npm:eleventy -- --serve\" \"npm:tsc-eleventy -- --watch\"",
-		"build": "vite build && npm run tsc-eleventy && ELEVENTY_ENV=production npm run eleventy",
+		"start-eleventy": "rm -rf dist/ dist-eleventy/ && npm run eleventy-tsc && npm run eleventy-cp && concurrently --raw \"npm:eleventy -- --serve\" \"npm:eleventy-tsc -- --watch\" \"npm:start-eleventy-cp\"",
+		"start-eleventy-cp": "chokidar \"src/components/**/*\" \"src/site/**/*\" --ignore \"*.{ts,tsx}\" --command \"cpy {path} dist-eleventy --parents\"",
+		"build": "rm -rf dist-eleventy/ && vite build && npm run eleventy-tsc && npm run eleventy-cp && ELEVENTY_ENV=production npm run eleventy",
 		"eleventy": "NODE_OPTIONS=--enable-source-maps eleventy",
-		"tsc-eleventy": "tsc --project tsconfig.eleventy.json"
+		"eleventy-tsc": "tsc --project tsconfig.eleventy.json",
+		"eleventy-cp": "cpy src/components src/site \"!**/*.{ts,tsx}\" dist-eleventy --parents"
 	},
 	"dependencies": {
 		"react": "^17.0.2",
@@ -17,7 +19,9 @@
 		"@types/node": "^15.12.4",
 		"@types/react": "^17.0.11",
 		"@types/react-dom": "^17.0.8",
+		"chokidar-cli": "^2.1.0",
 		"concurrently": "^6.2.0",
+		"cpy-cli": "^3.1.1",
 		"prettier": "^2.3.1",
 		"prettier-plugin-organize-imports": "^2.2.0",
 		"sass": "^1.35.1",

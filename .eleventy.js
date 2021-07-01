@@ -1,10 +1,12 @@
-const { formatHtml } = require("./src/site/transforms/format-html");
-const { config } = require("./config");
+const {
+	formatHtml,
+} = require("./dist-eleventy/src/site/transforms/format-html");
+const { config } = require("./dist-eleventy/config");
 
 module.exports = (eleventyConfig) => {
 	eleventyConfig.addCollection("post", (collection) => {
 		return collection
-			.getFilteredByGlob("src/site/pages/posts/*.md")
+			.getFilteredByGlob("dist-eleventy/src/site/pages/posts/*.md")
 			.sort((a, b) => {
 				return a.inputPath.localeCompare(b.inputPath);
 			});
@@ -37,7 +39,7 @@ module.exports = (eleventyConfig) => {
 
 	return {
 		dir: {
-			input: "src/site/pages",
+			input: "dist-eleventy/src/site/pages",
 			includes: "../includes",
 			layouts: "../layouts",
 			data: "../data",

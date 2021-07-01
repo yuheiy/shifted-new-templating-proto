@@ -3,9 +3,6 @@ import { config } from "./config";
 
 export default defineConfig({
 	base: config.pathPrefix,
-	resolve: {
-		extensions: [".ts", ".tsx", ".mjs", ".js", ".jsx", ".json"],
-	},
 	logLevel: "warn",
 	build: {
 		rollupOptions: {
